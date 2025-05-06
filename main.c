@@ -93,24 +93,17 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_SET);
+  Motor_Enable();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	      Motor_SetDirection(1);
-          Motor_Enable();
-	      Motor_SetSpeed(1000);  // 50% Duty Cycle
+	  Motor_SetDirection(1);
+          Motor_SetSpeed(1000);  // 50% Duty Cycle
           HAL_Delay (1000);
-
-
-	     Motor_SetDirection(0);
-	      //Motor_SetSpeed(700);
-          //HAL_Delay(3000);
-
-	     // Motor_SetSpeed(0);
-	      //HAL_Delay(1000);
+          Motor_SetDirection(0);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
